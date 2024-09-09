@@ -16,12 +16,13 @@ fun main() {
         val choice: Int = readIntInput()
         when(choice) {
             1 -> { displayAll(ids) }
-            2 -> {
+            2 -> { searchId(ids) }
+            3 -> {
                 println("Please enter the PHILSYS ID of the resident...")
                 val message: String = if(issueID(ids, readIntInput())) "Successfully issued ID!" else "ID Not Found!"
                 println("$message\n")
             }
-            3 -> {
+            4 -> {
                 println("Exiting Application...")
                 exitProcess(0)
             }
@@ -63,8 +64,9 @@ fun displayMenu() {
             PHILSYS ID Inventory Application
             ------------------------------------------
                 1. View all PHILSYS IDs
-                2. Issue a PHILSYS ID
-                3. Exit App
+                2. Check Availability
+                3. Issue a PHILSYS ID
+                4. Exit App
             ------------------------------------------
         """.trimIndent()
     )
@@ -84,6 +86,22 @@ fun displayAll(ids: MutableList<PhilSysId>) {
     println("\n-----------------------   MASTERLIST   ---------------------------")
     for(id:PhilSysId in ids) {
         println("$id\n")
+    }
+}
+
+fun searchId(ids: MutableList<PhilSysId>) {
+    val localCopy: MutableList<PhilSysId> = mutableListOf(ids)
+    try {
+        println("Enter last name: ")
+        val idQueryA: String = readln()!!
+        println("Enter given name: ")
+        val idQueryB: String = readln()!!
+
+        localCopy.removeIf { it.lastName.equals(idQueryA, true) && it.firstName.equals(idQueryB, true) }
+        println("\n----------------------- SEARCH RESULTS ---------------------------")
+        println(localCopy.get(0).toString())
+    } catch (npe: NullPointerException) {
+        println("Please enter the required information!)
     }
 }
 
