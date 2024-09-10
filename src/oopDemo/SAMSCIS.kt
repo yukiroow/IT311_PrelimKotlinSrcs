@@ -1,3 +1,4 @@
+
 package oopDemo
 
 /**
@@ -9,10 +10,37 @@ package oopDemo
  * how to create and implement an interface
  */
 
+
+//constructor, setter, getter
+/**class it311 (var Name: String) {
+
+    //constructor(studentName: String) : this(studentName)
+
+
+     var Name: String = "none"
+        get() {
+            return field
+        }
+
+        set(value) {
+            field = value
+        }
+
+}
+*/
+
+
+// inheritance
 // parent class
-open class SAMSCIS(val studentName: String) {
+open class SAMSCIS( val studentName: String) {
+
     open fun department() {
+        toString()
         println("$studentName is part of the SAMSCIS department.")
+    }
+
+    override fun toString(): String {
+        return "$studentName is part of the SAMSCIS department."
     }
 }
 
@@ -26,8 +54,8 @@ class Accountancy(studentName: String) : SAMSCIS(studentName) {
 
 // Child class for Financial Management
 class FinancialManagement(studentName: String) : SAMSCIS(studentName) {
-    override fun department() {
-        println("$studentName is studying Financial Management.")
+    override fun toString(): String {
+        return "$studentName is studying Financial Management."
     }
 }
 
