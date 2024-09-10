@@ -46,7 +46,7 @@ open class SAMSCIS( val studentName: String) {
 
 // Child class for Accountancy
 class Accountancy(studentName: String) : SAMSCIS(studentName) {
-    override fun department() {
+    fun dptment() {
         super.department()
         println("$studentName is studying Accountancy.")
     }
@@ -56,6 +56,10 @@ class Accountancy(studentName: String) : SAMSCIS(studentName) {
 class FinancialManagement(studentName: String) : SAMSCIS(studentName) {
     override fun toString(): String {
         return "$studentName is studying Financial Management."
+    }
+
+    override fun department() {
+        println(toString())
     }
 }
 
@@ -72,7 +76,7 @@ fun main() {
     val itStudent = InformationTechnology("David")
 
     // Polymorphism in action
-    accountancyStudent.department()  // John is studying Accountancy.
-    fmStudent.department()            // Sarah is studying Financial Management.
+    accountancyStudent.dptment()  // John is studying Accountancy.
+    fmStudent.department()          // Sarah is studying Financial Management.
     itStudent.department()            // David is studying Information Technology.
 }
