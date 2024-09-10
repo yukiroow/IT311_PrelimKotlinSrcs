@@ -11,25 +11,6 @@ package oopDemo
  */
 
 
-//constructor, setter, getter
-/**class it311 (var Name: String) {
-
-    //constructor(studentName: String) : this(studentName)
-
-
-     var Name: String = "none"
-        get() {
-            return field
-        }
-
-        set(value) {
-            field = value
-        }
-
-}
-*/
-
-
 // inheritance
 // parent class
 open class SAMSCIS( val studentName: String) {
@@ -41,14 +22,6 @@ open class SAMSCIS( val studentName: String) {
 
     override fun toString(): String {
         return "$studentName is part of the SAMSCIS department."
-    }
-}
-
-// Child class for Accountancy
-class Accountancy(studentName: String) : SAMSCIS(studentName) {
-    fun dptment() {
-        super.department()
-        println("$studentName is studying Accountancy.")
     }
 }
 
@@ -67,6 +40,14 @@ class FinancialManagement(studentName: String) : SAMSCIS(studentName) {
 class InformationTechnology(studentName: String) : SAMSCIS(studentName) {
     override fun department() {
         println("$studentName is studying Information Technology.")
+    }
+}
+
+// Child class for Accountancy
+class Accountancy(studentName: String) : SAMSCIS(studentName) {
+    fun dptment() {
+        super.department()
+        println("$studentName is studying Accountancy.")
     }
 }
 
