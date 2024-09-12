@@ -28,8 +28,10 @@ fun main() {
             }
 
             2 -> {
-                println("Please enter the PHILSYS ID of the resident...")
-                val message: String = if (issueID(ids, readIntInput())) "Successfully issued ID!" else "ID Not Found!"
+                println("Please enter the PHILSYS ID Number of the resident...")
+                val idNo: Int = readIntInput()
+                val idIssued: Boolean = issueID(ids, idNo)
+                val message: String = if (idIssued) "Successfully issued ID!" else "ID Not Found!"
                 println("$message\n")
             }
 
