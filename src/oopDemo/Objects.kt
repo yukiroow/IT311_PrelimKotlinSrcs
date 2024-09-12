@@ -2,7 +2,7 @@ package oopDemo
 
 class PhilSysId(
     val idNo: Int,
-    private val person: Resident
+    val person: Resident
 ) {
     override fun toString(): String {
         return """
@@ -13,15 +13,13 @@ class PhilSysId(
 }
 
 class Resident(
-    private val firstName: String,
-    private val middleName: String,
-    private val lastName: String
+    val firstName: String,
+    private val middleName: String?,
+    val lastName: String
 ) {
-    constructor(firstName: String, lastName: String) : this(firstName, "\b", lastName)
+    constructor(firstName: String, lastName: String) : this(firstName, null, lastName)
 
     override fun toString(): String {
-        return """
-            $firstName $middleName $lastName
-        """.trimIndent()
+        return if(middleName != null) "$firstName $middleName $lastName" else "$firstName $lastName"
     }
 }
