@@ -23,8 +23,8 @@ fun main() {
                 val idQueryB: String = readln().trim()
 
                 val message: String = searchId(ids, idQueryA, idQueryB)?.toString() ?: "No Available ID Found"
-                println("\n----------------------- SEARCH RESULTS ---------------------------")
-                println(message)
+                println("----------------------- SEARCH RESULTS ---------------------------")
+                println("${message}\n")
             }
 
             2 -> {
