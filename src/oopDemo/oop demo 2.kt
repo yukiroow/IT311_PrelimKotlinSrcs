@@ -1,20 +1,7 @@
-
 package oopDemo
 
-/**
- * reference class
- * create constructor
- * create setters & getters
- * how override default methods (tostring)
- * how to inheritance super
- * how to create and implement an interface
- */
-
-
-// inheritance
 // parent class
 open class SAMSCIS( val studentName: String) {
-
     open fun department() {
         toString()
         println("$studentName is part of the SAMSCIS department.")
@@ -57,7 +44,7 @@ fun main() {
     val itStudent = InformationTechnology("David")
 
     // Polymorphism in action
-    accountancyStudent.dptment()  // John is studying Accountancy.
+    accountancyStudent.dptment()    // John is studying Accountancy.
     fmStudent.department()          // Sarah is studying Financial Management.
-    itStudent.department()            // David is studying Information Technology.
+    itStudent.department()          // David is studying Information Technology.
 }

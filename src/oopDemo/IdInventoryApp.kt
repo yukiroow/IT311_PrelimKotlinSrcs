@@ -2,12 +2,6 @@ package oopDemo
 
 import kotlin.system.exitProcess
 
-/*
- * Requirements:
- * 1. App should run indefinitely until stop
- * 2. Operator can issue an ID
- * 3. Operator can view all IDs
- */
 fun main() {
     val ids: MutableList<PhilSysId> = mutableListOf()
     initIDs(ids)

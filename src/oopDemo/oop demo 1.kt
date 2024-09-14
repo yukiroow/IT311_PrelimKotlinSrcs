@@ -19,20 +19,14 @@ fun main() {
     println("Person 2: ${person2.name}, Age: ${person2.age}")
 }
 
-//constructor, setter, getter
-/**class it311 (var Name: String) {
+class Student(var name: String?, id: Int) {
+    constructor(id: Int) : this(null, id)
 
-//constructor(studentName: String) : this(studentName)
-
-
-var Name: String = "none"
-get() {
-return field
+    var id: Int = id
+        get()  {
+            return field + 1
+        }
+        set(value) {
+            field = value + 1
+        }
 }
-
-set(value) {
-field = value
-}
-
-}
- */
